@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    <record id="pos_report_form" model="ir.ui.view">
+        <field name="name">pos.report.form</field>
+        <field name="model">pos.report</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+        <form string="Daily Shop Sales Report" version="7.0" create='0' edit='0'>
+		    <group colspan="2" col="2">
+                <field name="date"/>
+                <field name="shop" style="width: 150px;"/>
+            </group>
+            <group colspan="2" col="2">
+                <button name="query_report" type="object" string="Query" class="oe_highlight"/>
+            </group>            
+        </form>
+        </field>
+    </record>
+    <record id="action_pos_report" model="ir.actions.act_window">
+        <field name="name">Daily Shop Sales Report</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">pos.report</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="pos_report_form"/>
+        <field name="target">inline</field>
+    </record>
+    
+    <record id="pos_report_query_form" model="ir.ui.view">
+        <field name="name">pos.report.query.form</field>
+        <field name="model">pos.report</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+        <form string="Daily Shop Sales Report" version="7.0" create='0' edit='0'>
+		    <group style="font-size: 12px; width: 230px;">
+                <field name="header" style="text-align:center;" nolabel="1" colspan="4"/>
+<!--                <field name="phone" style="text-align:center;" nolabel="1" colspan="4"/>  -->
+<!--                <field name="net" style="text-align:center;" nolabel="1" colspan="4"/>  -->
+				<field name="date" style="width: 70px;" nolabel="1" colspan="3"/>
+			</group>
+<!--		    <group colspan="3" col="3" style="width: 70px;font-size: 10px;">  -->
+		    <group style="font-size: 12px; width: 230px;">
+				<field name="text1" style="text-align:center;" nolabel="1" colspan="3"/>
+				<field name="text2" style="text-align:center;" nolabel="1" colspan="3"/>
+				<field name="text3" style="text-align:center;" nolabel="1" colspan="3"/>
+            </group>
+            <group colspan="3" col="3" style="width: 70px;font-size: 12px;">
+				<label string="" colspan="1" style="width: 42px;"/>
+                <label string="顧客数" colspan="1" style="width: 42px;margin-left: -15px;"/>
+				<label string="金額" colspan="1" style="width: 42px;margin-left: -10px;"/>
+                <field name="total_with_tax" style="width: 42px;"/>
+                <field name="total_with_tax2" style="width: 42px;" nolabel="1"/>
+                <field name="tax" style="width: 42px;" />
+                <field name="tax2" style="width: 42px;" nolabel="1"/>
+                <field name="consum_delivery" style="width: 42px;" />
+                <field name="consum_delivery2" style="width: 42px;" nolabel="1"/>
+                <field name="total_without_tax" style="width: 42px;"/>
+                <field name="total_without_tax2" style="width: 42px;" nolabel="1"/>
+                <field name="total_cash" style="width: 42px;"/>
+                <field name="total_cash2" style="width: 42px;" nolabel="1"/>
+                <field name="total_invoice" style="width: 42px;"/>
+                <field name="total_invoice2" style="width: 42px;" nolabel="1"/>
+                <field name="total_card" style="width: 42px;"/>
+                <field name="total_card2" style="width: 42px;" nolabel="1"/>
+                <field name="total_ticket" style="width: 42px;"/>
+                <field name="total_ticket2" style="width: 42px;" nolabel="1"/>
+                <field name="total_virtual_currency" style="width: 42px;"/>
+                <field name="total_virtual_currency2" style="width: 42px;" nolabel="1"/>
+                <field name="total_rebate" style="width: 42px;"/>
+                <field name="total_rebate2" style="width: 42px;" nolabel="1" />
+            </group>
+            <group colspan="3" col="3" style="width: 70px;font-size: 12px;">
+                <field name="total_return" style="width: 42px;"/>
+                <field name="total_return2" style="width: 42px;" nolabel="1"/>
+            </group>
+            <br /><br />
+            <group colspan="2" col="2" style="width: 70px;font-size: 12px;">
+                <field name="base_cash" style="width: 42px;"/>
+                <field name="cash_increase" style="width: 42px;"/>
+                <label string="------------------------------------------" colspan="2" style="width: 112px;"/>
+                <field name="cash_hand" style="width: 42px;"/>
+            </group>
+            <br />
+            <group colspan="2" col="2" style="width: 70px;font-size: 12px;">
+                <field name="sequence" style="width: 42px;" invisible="context.get('sequence')"/>
+            </group>
+            <br /><br />
+            <group colspan="2" col="2">
+                <input type="button" onclick="javascript:window.print();" value="Print Report" class="oe_highlight"/>
+            </group>
+        </form>
+        </field>
+    </record>    
+    <menuitem id="menu_pos_report" action="action_pos_report" name="Daily Shop Sales Report" parent="point_of_sale.menu_point_of_sale" sequence="10" groups="base.group_user"/>
+    </data>
+</openerp>

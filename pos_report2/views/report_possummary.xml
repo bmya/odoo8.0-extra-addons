@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+<template id="report_possummary_document">
+    <t t-call="report.html_container">
+        <div class="page">
+            <div class="oe_structure"/>
+            <div class="row">
+                <div class="col-xs-12 text-center">
+                    <p><pre t-field="o.header" /></p>
+                </div>
+                <p t-field="o.date" />
+
+                <table class="table table-condensed">
+                    <tr class="border-black">
+                       <td><strong>Daily Summary Report</strong></td>
+                    </tr>
+                </table>
+            </div>
+            <table class="table table-condensed">
+                <thead>
+                     <tr>
+                         <th>Item</th>
+                         <th class="text-right">No. of Customers</th>
+                         <th class="text-right">Amount</th>
+                     </tr>
+                </thead>
+                <tbody class="sale_tbody">
+                    <tr>
+                        <td>
+                            <span>Gross Sales</span>
+                        </td>
+                        <td class="text-right">
+                            <span t-field="o.gross_sales_cust"/>
+                        </td>
+                        <td class="text-right">
+                            <span t-field="o.gross_sales_amt" t-field-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>VAT</span>
+                        </td>
+                        <td class="text-right">
+                            <span t-field="o.vat_cust"/>
+                        </td>
+                        <td class="text-right">
+                            <span t-field="o.vat_amt" t-field-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>Delivery, etc.</span>
+                        </td>
+                        <td class="text-right">
+                            <span t-field="o.other_deduction_cust"/>
+                        </td>
+                        <td class="text-right">
+                            <span t-field="o.other_deduction_amt" t-field-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>Net Sales</span>
+                        </td>
+                        <td class="text-right">
+                            <span t-field="o.net_sales_cust"/>
+                        </td>
+                        <td class="text-right">
+                            <span t-field="o.net_sales_amt" t-field-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>Total Cash</span>
+                        </td>
+                        <td class="text-right">
+                            <span t-field="o.sum_shopcash_cust"/>
+                        </td>
+                        <td class="text-right">
+                            <span t-field="o.sum_shopcash_amt" t-field-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>Urikake</span>
+                        </td>
+                        <td class="text-right">
+                            <span t-field="o.sum_receivable_cust"/>
+                        </td>
+                        <td class="text-right">
+                            <span t-field="o.sum_receivable_amt" t-field-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>Credit Card</span>ssss
+                        </td>
+                        <td class="text-right">
+                            <span t-field="o.sum_credit_cust"/>
+                        </td>
+                        <td class="text-right">
+                            <span t-field="o.sum_credit_amt" t-field-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>Gift Voucher</span>
+                        </td>
+                        <td class="text-right">
+                            <span t-field="o.sum_voucher_cust"/>
+                        </td>
+                        <td class="text-right">
+                            <span t-field="o.sum_voucher_amt" t-field-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>Gift Voucher Change</span>
+                        </td>
+                        <td class="text-right">
+                            <span t-field="o.sum_voucher_change_cust"/>
+                        </td>
+                        <td class="text-right">
+                            <span t-field="o.sum_voucher_change_amt" t-field-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>Electronic Cash</span>
+                        </td>
+                        <td class="text-right">
+                            <span t-field="o.sum_ecash_cust"/>
+                        </td>
+                        <td class="text-right">
+                            <span t-field="o.sum_ecash_amt" t-field-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-condensed">
+                <tbody>
+                    <tr>
+                        <td>
+                            <span>Returns</span>
+                        </td>
+                        <td class="text-right">
+                            <span t-field="o.sum_return_cust"/>
+                        </td>
+                        <td class="text-right">
+                            <span t-field="o.sum_return_amt" t-field-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table class="table table-condensed">
+                <tbody class="sale_tbody">
+                    <tr>
+                        <td>
+                            <span>Opening Balance</span>
+                        </td>
+                        <td class="text-right">
+                            <span t-field="o.base_cash" t-field-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>Cash Received</span>
+                        </td>
+                        <td class="text-right">
+                            <span t-field="o.cash_increase" t-field-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                    </tr>
+
+                    <tr class="border-black">
+                        <td>
+                            <span>Ending Balance</span>
+                        </td>
+                        <td class="text-right">
+                            <span t-field="o.cash_hand" t-field-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="row">
+                <div class="col-xs-12">
+                <p t-if="o.sequence">Closing ID: <span t-field="o.sequence"/></p>
+                </div>
+            </div>
+
+        </div>
+    </t>
+</template>
+
+<template id="report_possummary">
+    <t t-call="report.html_container">
+        <t t-foreach="doc_ids" t-as="doc_id">
+            <t t-raw="translate_doc(doc_id, doc_model, 'partner_id.lang', 'pos_report2.report_possummary_document')"/>
+        </t>
+    </t>
+</template>
+</data>
+</openerp>

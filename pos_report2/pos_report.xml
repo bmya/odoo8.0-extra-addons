@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <report 
+            id="report_pos_summary"
+            string="POS Summary"
+            model="pos.report2" 
+            report_type="qweb-pdf"
+            name="pos_report2.report_possummary"
+            file="pos_report2.report_possummary" 
+        />
+        <record id="report_pos_summary" model="ir.actions.report.xml">
+            <field name="paperformat_id" ref="point_of_sale.paperformat_posreceipt"/>
+        </record>
+
+    </data>
+</openerp>
