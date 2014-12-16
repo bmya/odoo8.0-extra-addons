@@ -1,0 +1,74 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* account_payment_term
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-12-10 15:33+0000\n"
+"PO-Revision-Date: 2014-12-10 15:33+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_payment_term
+#: field:account.payment.term,cutoff_date:0
+msgid "Cutoff Date"
+msgstr "締日"
+
+#. module: account_payment_term
+#: constraint:account.payment.term:0
+msgid "Cutoff Date must be in the range between 1 and 30."
+msgstr "締日は 1~30 の間で指定してください。"
+
+#. module: account_payment_term
+#: field:account.payment.term,month_end_cutoff:0
+msgid "Cutoff at Month-End"
+msgstr "月末締"
+
+#. module: account_payment_term
+#: view:account.payment.term.line:account_payment_term.view_payment_term_line_form_z1
+msgid "Due Date Computation"
+msgstr "期日計算"
+
+#. module: account_payment_term
+#: view:account.payment.term:account_payment_term.view_payment_term_form_z1
+#: field:account.payment.term,monthly_cutoff:0
+#: field:account.payment.term.line,monthly_cutoff:0
+msgid "Monthly Cutoff"
+msgstr "月次締"
+
+#. module: account_payment_term
+#: field:account.payment.term.line,months_added:0
+msgid "Months to Add"
+msgstr "追加月数"
+
+#. module: account_payment_term
+#: field:account.payment.term.line,payment_date:0
+msgid "Payment Date"
+msgstr "支払日"
+
+#. module: account_payment_term
+#: constraint:account.payment.term.line:0
+msgid "Payment Date must be in the range between 1 and 30."
+msgstr "支払日は 1~30 の間で指定してください。"
+
+#. module: account_payment_term
+#: model:ir.model,name:account_payment_term.model_account_payment_term
+msgid "Payment Term"
+msgstr "支払条件"
+
+#. module: account_payment_term
+#: model:ir.model,name:account_payment_term.model_account_payment_term_line
+msgid "Payment Term Line"
+msgstr "支払条件行"
+
+#. module: account_payment_term
+#: field:account.payment.term.line,month_end_pay:0
+msgid "Payment at Month End"
+msgstr "月末支払"
+
