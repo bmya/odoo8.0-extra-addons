@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+  <template id="less" name="theme_common less" active="True">
+    <xpath expr="." position="inside">
+      <link href="/theme_common/static/src/less/s_discount.less" rel="stylesheet" type="text/less"/>
+      <link href="/theme_common/static/src/less/s_event_list.less" rel="stylesheet" type="text/less"/>
+      <link href="/theme_common/static/src/less/s_profile.less" rel="stylesheet" type="text/less"/>
+      <link href="/theme_common/static/src/less/s_icon_box.less" rel="stylesheet" type="text/less"/>
+      <link href="/theme_common/static/src/less/s_icon_box_circle.less" rel="stylesheet" type="text/less"/>
+      <link href="/theme_common/static/src/less/s_icon_box_square.less" rel="stylesheet" type="text/less"/>
+      <link href="/theme_common/static/src/less/s_pricing.less" rel="stylesheet" type="text/less"/>
+      <link href="/theme_common/static/src/less/s_process_steps.less" rel="stylesheet" type="text/less"/>
+      <link href="/theme_common/static/src/less/s_timeline.less" rel="stylesheet" type="text/less"/>
+      <link href="/theme_common/static/src/less/s_lead_bar.less" rel="stylesheet" type="text/less"/>
+      <link href="/theme_common/static/src/less/s_logo_bar.less" rel="stylesheet" type="text/less"/>
+      <link href="/theme_common/static/src/less/s_color_blocks_2.less" rel="stylesheet" type="text/less"/>
+      <link href="/theme_common/static/src/less/s_color_blocks_4.less" rel="stylesheet" type="text/less"/>
+      <link href="/theme_common/static/src/less/s_big_image.less" rel="stylesheet" type="text/less"/>
+      <link href="/theme_common/static/src/less/s_big_image_parallax.less" rel="stylesheet" type="text/less"/>
+      <link href="/theme_common/static/src/less/s_team_profiles.less" rel="stylesheet" type="text/less"/>
+      <link href="/theme_common/static/src/less/s_slide_banner.less" rel="stylesheet" type="text/less"/>
+      <link href="/theme_common/static/src/less/s_separator_shade.less" rel="stylesheet" type="text/less"/>
+      <link href="/theme_common/static/src/less/s_separator_color.less" rel="stylesheet" type="text/less"/>
+    </xpath>
+  </template>
+
+  <template id="snippet_selector" page="True">
+    <t t-call="website.layout">
+      <t t-call-assets="theme_common.less"/>
+      <div id="wrap" class="oe_structure oe_empty">
+
+        <t t-snippet="theme_common.s_big_image"/>
+        <t t-snippet="theme_common.s_big_image_parallax"/>
+        <t t-snippet="theme_common.s_color_blocks_2"/>
+        <t t-snippet="theme_common.s_color_blocks_4"/>
+        <t t-snippet="theme_common.s_column"/>
+        <t t-snippet="theme_common.s_discount"/>
+        <t t-snippet="theme_common.s_event_list"/>
+        <t t-snippet="theme_common.s_icon_box"/>
+        <t t-snippet="theme_common.s_icon_box_circle"/>
+        <t t-snippet="theme_common.s_icon_box_square"/>
+        <t t-snippet="theme_common.s_image_text_2"/>
+        <t t-snippet="theme_common.s_lead_bar"/>
+        <t t-snippet="theme_common.s_logo_bar"/>
+        <t t-snippet="theme_common.s_pricing"/>
+        <t t-snippet="theme_common.s_process_step"/>
+        <t t-snippet="theme_common.s_profile"/>
+        <t t-snippet="theme_common.s_separator_color"/>
+        <t t-snippet="theme_common.s_separator_shade"/>
+        <t t-snippet="theme_common.s_slide_banner"/>
+        <t t-snippet="theme_common.s_team_profiles"/>
+        <t t-snippet="theme_common.s_text"/>
+        <t t-snippet="theme_common.s_text_image_2"/>
+        <t t-snippet="theme_common.s_three_columns_circle"/>
+        <t t-snippet="theme_common.s_timeline"/>
+        <t t-snippet="theme_common.s_timeline_compact"/>
+        <t t-snippet="theme_common.s_title_small"/>
+        <t t-snippet="theme_common.s_two_columns"/>
+
+      </div>
+    </t>
+  </template>
+
+</data>
+</openerp>
