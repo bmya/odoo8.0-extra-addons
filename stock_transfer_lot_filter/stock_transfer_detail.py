@@ -19,22 +19,30 @@
 #
 ##############################################################################
 
-{
-    'name': 'Lot Filtering in Stock Transfer',
-    'version': '0.9',
-    'author': 'Rooms For (Hong Kong) Ltd T/A OSCG',
-    'website': 'http://www.openerp-asia.net',
-    'category': 'Stock',
-    'depends': [
-        "stock",
-    ],
-    'description': """
-* Adds a new function field 'lot_balance' to stock.production.lot for filtering purpose.
-* Limits lot/serial number selection to ones with inventory balance larger than zero (except for incoming picking).
-     """,
-    'data': [
-        'stock_transfer_details.xml',
-    ],
-    'installable': True,
-}
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
+from openerp import models, fields, api, _
+
+
+class stock_transfer_details(models.TransientModel):
+    _inherit = 'stock.transfer_details'
+    
+    @api.multi
+    def wizard_view(self):
+        picking_id = self.env.context.get('active_id')
+        code = self.env['stock.picking'].browse(picking_id).picking_type_id.code
+        if code == 'incoming':
+            view = self.env.ref('stock.view_stock_enter_transfer_details')
+        else:
+            view = self.env.ref('stock_transfer_lot_filter.view_stock_enter_transfer_details_z1')
+
+        return {
+            'name': _('Enter transfer details'),
+            'type': 'ir.actions.act_window',
+            'view_type': 'form',
+            'view_mode': 'form',
+            'res_model': 'stock.transfer_details',
+            'views': [(view.id, 'form')],
+            'view_id': view.id,
+            'target': 'new',
+            'res_id': self.ids[0],
+            'context': self.env.context,
+        }
