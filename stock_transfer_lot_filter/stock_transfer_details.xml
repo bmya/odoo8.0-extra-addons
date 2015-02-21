@@ -28,7 +28,8 @@
                                 <field name="destinationloc_id" domain="[('id', 'child_of', parent.picking_destination_location_id)]"/>
                                 <field name="result_package_id" groups="stock.group_tracking_lot" context="{'location_id': destinationloc_id}"/>
                                 <button name="put_in_pack" string="Pack" type="object" icon="terp-product" attrs="{'invisible': [('result_package_id', '!=', False)]}" groups="stock.group_tracking_lot"/>
-                                <field name="lot_id" groups="stock.group_production_lot" domain="[('product_id','=?', product_id),('lot_balance','>',0)]" context="{'product_id': product_id}"/>            </tree>
+                                <field name="lot_id" groups="stock.group_production_lot" domain="[('product_id','=?', product_id),('lot_balance','>',0)]" context="{'product_id': product_id}" options="{'no_quick_create':True,'no_create_edit':True}"/>
+                            </tree>
                         </field>
                     </group>
                     <group string="Packages To Move" groups="stock.group_tracking_lot">
