@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
+##############################################################################
+#
 #    OpenERP, Open Source Management Solution
-#    Copyright (C) Rooms For (Hong Kong) Limited T/A OSCG
+#    Copyright (C) Rooms For (Hong Kong) Limited T/A OSCG (<http://www.openerp-asia.net>).
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -14,31 +16,24 @@
 #
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+##############################################################################
 
 {
-    'name': 'Japan - Accounting',
-    'version': '1.2',
-    'category': 'Localization/Account Charts',
+    'name': 'Adjustments on Stock Move View',
+    'version': '0.5',
+    'author': 'Rooms For (Hong Kong) Ltd T/A OSCG',
+    'website': 'http://www.openerp-asia.net',
+    'category': 'Stock',
+    'depends': [
+        "stock",
+    ],
     'description': """
-
-Overview:
-=========
-
-* Chart of Accounts and Taxes template for companies in Japan.
-* This probably does not cover all the necessary accounts for a company.  You are expected to add/delete/modify accounts based on this template.
-
+* Makes adjustments to stock move views
     """,
-    'author': 'Rooms For (Hong Kong) Limited T/A OSCG',
-    'website': 'http://www.openerp-asia.net/',
-    'depends': ['account_chart'],
     'data': [
-        'data/account.account.template.csv',
-        'data/account.tax.code.template.csv',
-        'data/account.chart.template.csv',
-        'data/account.tax.template.csv',
-        'data/account.fiscal.position.template.csv',
-        ],
+        'stock_view.xml',
+    ],
     'installable': True,
 }
-
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
